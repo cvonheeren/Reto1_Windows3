@@ -11,7 +11,12 @@ public class leerFormatoEstandarTest {
 	@Test
 	public void leerFormatoEstandarTest() {
 		
-		assertEquals(LeerFormatoEstandarTest, true);
+		String prueba1 = "hola";
+		String prueba2 = "hola";
+		String prueba3 = "aaaa";
+		
+		assertTrue(formatoestandar.leerFormatoEstandar2());
+
 		
 	}
 
