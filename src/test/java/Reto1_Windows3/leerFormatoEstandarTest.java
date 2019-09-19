@@ -4,19 +4,14 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
-public class leerFormatoEstandarTest {
+public class LeerFormatoEstandarTest {
 
-	leerFormatoEstandar formatoestandar = new leerFormatoEstandar();
+	LeerFormatoEstandar formatoestandar = new LeerFormatoEstandar();
 	
 	@Test
 	public void leerFormatoEstandarTest() {
 		
-		String prueba1 = "hola";
-		String prueba2 = "hola";
-		String prueba3 = "aaaa";
-		
-		assertTrue(formatoestandar.leerFormatoEstandar2());
-
+		//assertEquals(LeerFormatoEstandarTest, true);
 		
 	}
 

@@ -5,5 +5,12 @@
 	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="lib" path="gradle/wrapper/gradle-wrapper.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto1_Windows3/poi-ooxml-3.9.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto1_Windows3/poi-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto1_Windows3/poi-examples-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto1_Windows3/poi-excelant-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto1_Windows3/poi-ooxml-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto1_Windows3/poi-ooxml-schemas-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Reto1_Windows3/poi-scratchpad-4.1.0.jar"/>
 	<classpathentry kind="output" path="bin/main"/>
 </classpath>
