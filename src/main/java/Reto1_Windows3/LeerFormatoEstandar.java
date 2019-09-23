@@ -4,11 +4,24 @@ import java.util.Scanner;
 
 public class LeerFormatoEstandar {
 
-	public String leerFormatoEstandar(Scanner reader) {
+	public static void main(String[] args) 
+	{
+		leerFormatoEstandar();
+	}
+	public static String leerFormatoEstandar() {
 		
-		String cadena = "";			
-		System.out.print ("Introduce un texto: ");
-		cadena = reader.next();
+		String cadena = "";	
+		
+		Scanner reader = new Scanner(System.in);
+		try {
+					
+			System.out.print ("Introduce un texto: ");
+			cadena = reader.next();
+		}
+		catch(Exception e){
+			
+		}
+		
 		reader.close();
 		return cadena;
 		

@@ -20,10 +20,10 @@ public class LeerFormatoEstandarTest {
 	   System.setIn(in);
 	   Scanner reader = new Scanner (System.in);
 	   String resultado = "";
-	   resultado = formatoestandar.leerFormatoEstandar(reader);
+	   resultado = formatoestandar.leerFormatoEstandar();
 	   assertEquals("hola", resultado);
 	   
-	}
+	} 
 	
 
 }
