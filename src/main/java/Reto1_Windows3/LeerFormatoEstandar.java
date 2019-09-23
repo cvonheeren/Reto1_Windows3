@@ -4,32 +4,28 @@ import java.util.Scanner;
 
 public class LeerFormatoEstandar {
 
-	public boolean leerFormatoEstandar() {
+	public static void main(String[] args) 
+	{
+		leerFormatoEstandar();
+	}
+	public static String leerFormatoEstandar() {
 		
-	Scanner reader1 = new Scanner (System.in);
-	Scanner reader2 = new Scanner (System.in);
-	
-
-	
-	boolean igual = true;
-	
-
-	try {
-		String prueba1 = reader1.nextLine();
-		String prueba2 = reader2.nextLine();
+		String cadena = "";	
 		
-		while(igual && prueba1 != null && prueba2 != null) {
-			if(!prueba1.equals(prueba2)) {
-				igual = false;
-			}
-				
+		Scanner reader = new Scanner(System.in);
+		try {
+					
+			System.out.print ("Introduce un texto: ");
+			cadena = reader.next();
 		}
-	} catch (Exception e) {
+		catch(Exception e){
+			
+		}
 		
-		e.printStackTrace();
-	} 
-
-	return false;
+		reader.close();
+		return cadena;
+		
+		
 }
 
 }
