@@ -1,5 +1,6 @@
 package Reto1_Windows3;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.swing.JFileChooser;
 import javax.xml.parsers.DocumentBuilder;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
@@ -9,8 +10,8 @@ import java.io.File;
 
 public class LeerFormatoXml {
 	
-	
-	public  String leerXml(String archivoEntrada){
+
+	public static String leerXml(String archivoEntrada){
 		
 		String datos = "";
 		
@@ -43,7 +44,7 @@ public class LeerFormatoXml {
 					"edad : " + eElement.getElementsByTagName("edad").item(0).getTextContent() + "\n" +
 					"Salario : " + eElement.getElementsByTagName("salario").item(0).getTextContent()+ "\n" + "---------------------" + "\n";
 
-				}
+				} 
 			}
 		    } catch (Exception e) {
 			e.printStackTrace();
