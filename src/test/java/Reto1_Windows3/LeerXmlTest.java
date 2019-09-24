@@ -14,18 +14,7 @@ LeerFormatoXml xml = new LeerFormatoXml();
 		String archivoEntrada = "C:\\WORKSPACE\\Reto1_Windows3\\src\\main\\java\\Reto1_Windows3\\prueba.xml";
 		
 		
-		assertEquals(xml.leerXml(archivoEntrada),"Raiz :alumnos\n" +
-								   "Subraiz :alumno\n" +
-								   "nombre : Miguel\n" +
-								   "apellido : lopez\n" +
-								   "edad : 19\n" +
-								   "Salario : 10000\n" + "---------------------" +
-								   "Raiz :alumnos\n" +
-								   "Subraiz :alumno\n" +
-								   "nombre : aa\n" +
-								   "apellido : bb\n" +
-								   "edad : 19\n" +
-								   "Salario : 10000\n" + "---------------------\n");
+		assertEquals(xml.leerXml(archivoEntrada),"Raiz :alumnos\nSubraiz :alumno\nnombre : Miguel\napellido : lopez\nedad : 19\nSalario : 10000\n---------------------Raiz :alumnos\nSubraiz :alumno\nnombre : aa\napellido : bb\nedad : 19\nSalario : 10000\n---------------------\n");
 		
 		
 	}
