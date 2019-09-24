@@ -2,12 +2,10 @@ package Reto1_Windows3;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.Arrays;
+
 
 public class LeerFormatoCsv {
 
-	public static final String SEPARATOR=";";
-	public static final String QUOTE="\"";
 	
 	public String leerCsv(String archivoEntraStrg1) {
 		
@@ -18,10 +16,7 @@ public class LeerFormatoCsv {
 			String acumulador = "";
 			
 			while (null!=line) {
-				String [] fields = line.split(SEPARATOR);
-				acumulador = acumulador + Arrays.toString(fields);
-				fields = removeTrailingQuotes(fields);
-				acumulador = acumulador + Arrays.toString(fields);
+				acumulador = acumulador + line;
 				line = br.readLine();
 			}
 			br.close();
@@ -35,14 +30,6 @@ public class LeerFormatoCsv {
 		return "";
 	}
 	
-	private static String[] removeTrailingQuotes(String[] fields) {
-		String result[] = new String[fields.length];
-		
-		for (int i=0;i<result.length;i++) {
-			result[i] = fields[i].replaceAll("^"+QUOTE, "").replaceAll(QUOTE+"$", "");
-		}
-		
-		return result;
-   }
+	
 	
 }

@@ -10,9 +10,11 @@ public class LeerFormatoCsvTest {
 	
 	@Test
 	public void test() {
-		String archivoEntraStrg1 = "";
+		String archivoEntraStrg1 = "C:\\workspace\\Reto1_Windows3\\archivoEntrada.csv";
+		String archivoEntraStrg2 = "kappa";
 		
-		fail("Not yet implemented");
+		assertEquals(leerC.leerCsv(archivoEntraStrg1), "el;vinode;asuncion");
+		assertEquals(leerC.leerCsv(archivoEntraStrg2), "");
 	}
 
 }
