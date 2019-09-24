@@ -1,5 +1,6 @@
 package Reto1_Windows3;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.swing.JFileChooser;
 import javax.xml.parsers.DocumentBuilder;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
@@ -9,9 +10,79 @@ import java.io.File;
 
 public class LeerFormatoXml {
 	
-	public static void main(String[] args) 
-	{
+
+	public static String leerXml(String archivoEntrada){
+		
+		String datos = "";
+		
 		try {
+
+			File fXmlFile = new File(archivoEntrada);
+			
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(fXmlFile);
+					
+			doc.getDocumentElement().normalize();
+					
+			NodeList nList = doc.getElementsByTagName("alumno");
+					
+
+			for (int temp = 0; temp < nList.getLength(); temp++) {
+ 
+				Node nNode = nList.item(temp);
+						
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+					Element eElement = (Element) nNode;
+					
+					datos = datos +
+					"Raiz :" + doc.getDocumentElement().getNodeName() + "\n" +
+					"Subraiz :" + nNode.getNodeName() + "\n" +
+					"nombre : " + eElement.getElementsByTagName("nombre").item(0).getTextContent() + "\n" +
+					"apellido : " + eElement.getElementsByTagName("apellido").item(0).getTextContent() + "\n" +
+					"edad : " + eElement.getElementsByTagName("edad").item(0).getTextContent() + "\n" +
+					"Salario : " + eElement.getElementsByTagName("salario").item(0).getTextContent()+ "\n" + "---------------------" + "\n";
+
+				} 
+			}
+		    } catch (Exception e) {
+			e.printStackTrace();
+		    }
+			return datos;
+			
+		  }
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	 * try {
 
 			File fXmlFile = new File("C:\\WORKSPACE\\Reto1_Windows3\\src\\main\\java\\Reto1_Windows3\\prueba.xml");
 			
@@ -49,6 +120,5 @@ public class LeerFormatoXml {
 			e.printStackTrace();
 		    }
 		  }
-	
-
+	 */
 }
