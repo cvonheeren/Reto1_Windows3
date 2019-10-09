@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<alumnos>
+	<alumno>
+		<nombre>Miguel</nombre>
+		<apellido>lopez</apellido>
+		<edad>19</edad>
+		<salario>10000</salario>
+	</alumno>
+	<alumno>
+		<nombre>aa</nombre>
+		<apellido>bb</apellido>
+		<edad>19</edad>
+		<salario>10000</salario>
+	</alumno>
+</alumnos>
