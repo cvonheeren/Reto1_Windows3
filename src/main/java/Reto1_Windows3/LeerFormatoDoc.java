@@ -28,7 +28,7 @@ public class LeerFormatoDoc {
 			we.close();		
 			return textoAcumulado;
 				
-			
+			 
 			 
 		} catch (IOException e) {
 			e.printStackTrace();
