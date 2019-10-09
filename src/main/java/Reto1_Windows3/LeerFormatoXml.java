@@ -11,7 +11,7 @@ import java.io.File;
 public class LeerFormatoXml {
 	
 
-	public static String leerXml(String archivoEntrada){
+	public  String leerXml(String archivoEntrada){
 		
 		String datos = "";
 		

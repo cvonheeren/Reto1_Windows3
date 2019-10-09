@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class LeerTxtTest {
 
-	LeerTxt leerTxt = new LeerTxt();
+	TratarTxt leerTxt = new TratarTxt();
 	
 	@Test
 	public void test() {

@@ -4,11 +4,8 @@ import java.util.Scanner;
 
 public class LeerFormatoEstandar {
 
-	public static void main(String[] args) 
-	{
-		leerFormatoEstandar();
-	}
-	public static String leerFormatoEstandar() {
+	
+	public  String leerFormatoEstandar() {
 		
 		String cadena = "";	
 		
