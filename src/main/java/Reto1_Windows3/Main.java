@@ -52,7 +52,7 @@ public class Main {
 				File archivo = chooser.getSelectedFile();
 				String archivoEntraStrg = archivo.getAbsolutePath();
 				
-				LeerFormatoCsv leerCsv = new LeerFormatoCsv();
+				TratarCsv leerCsv = new TratarCsv();
 				System.out.println(leerCsv.leerCsv(archivoEntraStrg));
 				
 			}
@@ -72,6 +72,19 @@ public class Main {
 				
 				TratarTxt escribirTxt = new TratarTxt();
 				escribirTxt.escribirTxt(archivoEntraStrg);
+			}
+			
+			if (tipo ==6) {
+				chooser.showDialog(null, "Abrir");
+				File archivo = chooser.getSelectedFile();
+				String archivoEntraStrg = archivo.getAbsolutePath();
+				Scanner sc = new Scanner(System.in);
+				
+				TratarCsv csv = new TratarCsv();
+				System.out.println("¿Cuantas columnas vas introducir?");
+				int tamanio = sc.nextInt();
+				String[] datos = csv.escribirArray(tamanio);
+				csv.escribirCsv(archivoEntraStrg, datos);
 			}
 		
 		

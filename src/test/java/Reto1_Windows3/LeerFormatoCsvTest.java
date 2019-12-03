@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class LeerFormatoCsvTest {
 
-	LeerFormatoCsv leerC = new LeerFormatoCsv();
+	TratarCsv leerC = new TratarCsv();
 	
 	@Test
 	public void test() {
