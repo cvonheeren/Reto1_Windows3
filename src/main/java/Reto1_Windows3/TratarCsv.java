@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 import com.opencsv.CSVWriter;
@@ -14,24 +13,20 @@ public class TratarCsv {
 
 	
 	public String leerCsv(String archivoEntraStrg1) {
-		try {     
-			
+		try {			
 			BufferedReader br = new BufferedReader(new FileReader(archivoEntraStrg1));
 			String line = br.readLine();
 			String acumulador = "";
-			int i=1;
-			
+						
 			while (null!=line) {
-
 				String[] parts = line.split(";");
-				acumulador = acumulador + "\n" + i + ". " + Arrays.toString(parts) + "\n---------------------------------------------------------------------------------";
-				i++;
+				acumulador = acumulador + "\n" + parts[0] + " " + parts[1];
+				
 				line = br.readLine();
 			}
 			br.close();
 			
-			return acumulador;
-			
+			return acumulador;			
 		} catch (Exception e) {
 			System.out.println("No se encuentra el archivo");
 		}

@@ -13,7 +13,8 @@ public class LeerFormatoCsvTest {
 		String archivoEntraStrg1 = "C:\\workspace\\Reto1_Windows3\\archivoEntrada.csv";
 		String archivoEntraStrg2 = "kappa";
 		
-		assertEquals(leerC.leerCsv(archivoEntraStrg1), "el;vinode;asuncion");
+		
+		assertEquals(leerC.leerCsv(archivoEntraStrg1), "el vino\nde asuncion");
 		assertEquals(leerC.leerCsv(archivoEntraStrg2), "");
 	}
 

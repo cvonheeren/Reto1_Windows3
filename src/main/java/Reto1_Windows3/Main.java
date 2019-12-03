@@ -74,15 +74,15 @@ public class Main {
 				escribirTxt.escribirTxt(archivoEntraStrg);
 			}
 			
-			if (tipo ==6) {
+			if (tipo == 6) {
 				chooser.showDialog(null, "Abrir");
 				File archivo = chooser.getSelectedFile();
 				String archivoEntraStrg = archivo.getAbsolutePath();
-				Scanner sc = new Scanner(System.in);
+				
 				
 				TratarCsv csv = new TratarCsv();
 				System.out.println("¿Cuantas columnas vas introducir?");
-				int tamanio = sc.nextInt();
+				int tamanio = reader.nextInt();
 				String[] datos = csv.escribirArray(tamanio);
 				csv.escribirCsv(archivoEntraStrg, datos);
 			}
