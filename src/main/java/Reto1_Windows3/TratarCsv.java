@@ -17,10 +17,11 @@ public class TratarCsv {
 			BufferedReader br = new BufferedReader(new FileReader(archivoEntraStrg1));
 			String line = br.readLine();
 			String acumulador = "";
-						
+				
+			line = br.readLine();
 			while (null!=line) {
 				String[] parts = line.split(";");
-				acumulador = acumulador + "\n" + parts[0] + " " + parts[1];
+				acumulador = acumulador + parts[0] + "-" + parts[1] + "\n";
 				
 				line = br.readLine();
 			}
