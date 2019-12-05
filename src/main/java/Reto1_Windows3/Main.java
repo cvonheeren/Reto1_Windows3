@@ -87,6 +87,7 @@ public class Main {
 				csv.escribirCsv(archivoEntraStrg, datos);
 			}
 		
+			System.out.println("borrar esto");
 		
 		reader.close();
 		
