@@ -14,8 +14,9 @@ public class Main {
 		Scanner reader = new Scanner (System.in);
 		int tipo = 0;
 		
-		System.out.println("Eliga el tipo de archivo:");
-		System.out.println("1. Leer .txt\n2. Leer .xml\n3. Leer .csv\n4. Leer desde la entrada estandar\n5. Escribir en txt");
+//		System.out.println("Eliga el tipo de archivo:");
+//		System.out.println("1. Leer .txt\n2. Leer .xml\n3. Leer .csv\n4. Leer desde la entrada estandar\n5. Escribir en txt");
+		System.out.println("Pulsa ");
 		System.out.print("Introduzca el numero: ");
 		tipo = reader.nextInt();
 
@@ -86,8 +87,15 @@ public class Main {
 				String[] datos = csv.escribirArray(tamanio);
 				csv.escribirCsv(archivoEntraStrg, datos);
 			}
+			
+			if (tipo == 7) {
+							
+				FormatearDatos format = new FormatearDatos();
+				System.out.println(format.formatoANumeros("el quijote-2,5"));
+				
+			}
 		
-			System.out.println("borrar esto");
+			
 		
 		reader.close();
 		

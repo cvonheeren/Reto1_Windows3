@@ -8,6 +8,7 @@ import java.util.StringTokenizer;
 public class FormatearDatos {
 	
 	public ArrayList<String> tratarArchivoConDelimitador (String tabla, String delimitador) {
+		
 	   StringTokenizer tokens = new StringTokenizer(tabla, delimitador);
 	       
        ArrayList<String> datos = new ArrayList<String>();
@@ -17,7 +18,6 @@ public class FormatearDatos {
        while(tokens.hasMoreTokens()){
            String str=tokens.nextToken();
            datos.add(str);
-           System.out.println(datos.get(i));
            i++;
        }
        
@@ -28,7 +28,7 @@ public class FormatearDatos {
 		DecimalFormat formato = new DecimalFormat("#,###.## ¤");
 		ArrayList<String> datos = new ArrayList<String>();
 	
-		datos = tratarArchivoConDelimitador(tabla, " ");
+		datos = tratarArchivoConDelimitador(tabla, "-");
 	
 		for (int i = 0; i<datos.size(); i++) {
 			if (i % 2 != 0) {
@@ -38,8 +38,20 @@ public class FormatearDatos {
 					String[] parts = (datos.get(i).split(","));
 					datos.set(i, formato.format(Float.parseFloat(parts[0] + "." + parts[1])));
 				}
+			}else {
+				
+				datos.set(i, ponerEnMayuscula(datos.get(i)));
 			}
+				
 		}	
 		return datos;
+	}
+	
+	public String ponerEnMayuscula (String tabla) {
+		
+		String mayuscula = "";		
+		mayuscula = tabla.toUpperCase(); 		
+		return mayuscula;
+		
 	}
 }
