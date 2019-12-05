@@ -47,11 +47,18 @@ public class FormatearDatos {
 		return datos;
 	}
 	
-	public String ponerEnMayuscula (String tabla) {
+	public String ponerEnMayuscula (String titulo) {
 		
-		String mayuscula = "";		
-		mayuscula = tabla.toUpperCase(); 		
-		return mayuscula;
+	      String mayuscula = "";	
+					
+	      String[] parts = titulo.split(" ");
+	      
+	      for (int i = 0; i<parts.length; i++) {
+	    	  
+	    	  mayuscula += parts[i].substring(0, 1).toUpperCase() + parts[i].substring(1) + " ";
+	      }
+	      
+	      return mayuscula;
 		
 	}
 }
