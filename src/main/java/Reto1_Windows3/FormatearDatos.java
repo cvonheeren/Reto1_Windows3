@@ -7,6 +7,9 @@ import java.util.StringTokenizer;
 
 public class FormatearDatos {
 	
+	DecimalFormat formato = new DecimalFormat("#,###.## ¤");
+	
+	
 	public ArrayList<String> tratarArchivoConDelimitador (String tabla, String delimitador) {
 		
 	   StringTokenizer tokens = new StringTokenizer(tabla, delimitador);
@@ -25,7 +28,7 @@ public class FormatearDatos {
 	}
 
 	public ArrayList<String> formatoANumeros (String tabla) {
-		DecimalFormat formato = new DecimalFormat("#,###.## ¤");
+		
 		ArrayList<String> datos = new ArrayList<String>();
 	
 		datos = tratarArchivoConDelimitador(tabla, "-");
@@ -35,8 +38,7 @@ public class FormatearDatos {
 				try {
 					datos.set(i, formato.format(Float.parseFloat(datos.get(i))));
 				} catch(Exception e){
-					String[] parts = (datos.get(i).split(","));
-					datos.set(i, formato.format(Float.parseFloat(parts[0] + "." + parts[1])));
+					datos.set(i,ponerPrecioBien(datos, i));
 				}
 			}else {
 				
@@ -51,14 +53,42 @@ public class FormatearDatos {
 		
 	      String mayuscula = "";	
 					
-	      String[] parts = titulo.split(" ");
+	      ArrayList<String> parts = tratarArchivoConDelimitador(titulo, " ");
 	      
-	      for (int i = 0; i<parts.length; i++) {
+	      for (int i = 0; i<parts.size(); i++) {
 	    	  
-	    	  mayuscula += parts[i].substring(0, 1).toUpperCase() + parts[i].substring(1) + " ";
+	    	  mayuscula += parts.get(i).substring(0, 1).toUpperCase() + parts.get(i).substring(1) + " ";
 	      }
 	      
 	      return mayuscula;
+		
+	}
+	
+	public void verFormatoBien (String tabla) {
+		
+		
+		String acumular = "";
+		ArrayList<String> datos = new ArrayList<String>();
+		
+		datos = tratarArchivoConDelimitador(tabla, "-");
+		
+		for (int i = 0; i<datos.size(); i++) {
+			if (i % 2 == 0) {
+				acumular += "Titulo: " + ponerEnMayuscula(datos.get(i)) + "\n";
+			}else {			
+				acumular += "Precio: " + ponerPrecioBien(datos, i) + "\n";
+			}
+			
+		}		
+		System.out.println(acumular);
+	}
+	
+	public String ponerPrecioBien (ArrayList<String> precio, int posicion) {
+		
+		String acumular="";
+		String[] parts = (precio.get(posicion).split(","));
+		acumular += formato.format(Float.parseFloat(parts[0] + "." + parts[1]));
+		return acumular;
 		
 	}
 }

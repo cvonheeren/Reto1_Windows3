@@ -92,6 +92,7 @@ public class Main {
 							
 				FormatearDatos format = new FormatearDatos();
 				System.out.println(format.formatoANumeros("el quijote-2,5"));
+				format.verFormatoBien("el quijote-2,5");
 				
 			}
 		
