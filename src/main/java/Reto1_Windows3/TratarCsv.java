@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.opencsv.CSVWriter;
@@ -12,27 +13,33 @@ import com.opencsv.CSVWriter;
 public class TratarCsv {
 
 	
-	public String leerCsv(String archivoEntraStrg1) {
+	public ArrayList<String> leerCsv(String archivoEntraStrg1) {
+		
+		ArrayList<String> acumulador = new ArrayList<>();
+		
 		try {			
 			BufferedReader br = new BufferedReader(new FileReader(archivoEntraStrg1));
-			String line = br.readLine();
-			String acumulador = "";
-				
+			String line = "";
+							
 			line = br.readLine();
 			while (null!=line) {
 				String[] parts = line.split(";");
-				acumulador = acumulador + parts[0] + "-" + parts[1] + "\n";
+				acumulador.add(parts[0] + "-" + parts[1]);
 				
 				line = br.readLine();
 			}
 			br.close();
 			
-			return acumulador;			
+				
 		} catch (Exception e) {
 			System.out.println("No se encuentra el archivo");
 		}
 		
-		return "";
+
+		
+		return acumulador;	
+		
+		
 	}
 	
 	public void escribirCsv(String archivoEntraStrg1, String[] datos) {

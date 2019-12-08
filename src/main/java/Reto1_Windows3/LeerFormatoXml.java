@@ -1,6 +1,5 @@
 package Reto1_Windows3;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.swing.JFileChooser;
 import javax.xml.parsers.DocumentBuilder;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;

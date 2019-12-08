@@ -16,10 +16,9 @@ public class Main {
 		
 //		System.out.println("Eliga el tipo de archivo:");
 //		System.out.println("1. Leer .txt\n2. Leer .xml\n3. Leer .csv\n4. Leer desde la entrada estandar\n5. Escribir en txt");
-		System.out.println("Pulsa ");
-		System.out.print("Introduzca el numero: ");
+		System.out.print("Introduzca el numero 7: ");
 		tipo = reader.nextInt();
-
+		System.out.println("");
 			
 			if (tipo == 1) {
 					
@@ -91,13 +90,17 @@ public class Main {
 			if (tipo == 7) {
 							
 				FormatearDatos format = new FormatearDatos();
-				System.out.println(format.formatoANumeros("el quijote-2,5"));
-				format.verFormatoBien("el quijote-2,5");
-				
+
+				chooser.showDialog(null, "Abrir");
+				File archivo = chooser.getSelectedFile();
+				String archivoEntraStrg = archivo.getAbsolutePath();
+						
+				TratarCsv csv = new TratarCsv();
+				format.formatoANumeros(csv.leerCsv(archivoEntraStrg));
+				format.verFormatoBien(format.guardardatosbien);
+
 			}
-		
-			
-		
+				
 		reader.close();
 		
 	

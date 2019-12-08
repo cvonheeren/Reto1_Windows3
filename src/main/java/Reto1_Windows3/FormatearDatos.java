@@ -8,6 +8,7 @@ import java.util.StringTokenizer;
 public class FormatearDatos {
 	
 	DecimalFormat formato = new DecimalFormat("#,###.## ¤");
+	ArrayList<String> guardardatosbien = new ArrayList<String>();
 	
 	
 	public ArrayList<String> tratarArchivoConDelimitador (String tabla, String delimitador) {
@@ -27,26 +28,30 @@ public class FormatearDatos {
        return datos;
 	}
 
-	public ArrayList<String> formatoANumeros (String tabla) {
+	public void formatoANumeros (ArrayList<String> tabla) {
 		
 		ArrayList<String> datos = new ArrayList<String>();
+		
 	
-		datos = tratarArchivoConDelimitador(tabla, "-");
+		for (int i = 0; i<tabla.size(); i++) {
+		datos = tratarArchivoConDelimitador(tabla.get(i), "-");
 	
-		for (int i = 0; i<datos.size(); i++) {
-			if (i % 2 != 0) {
+		for (int y=0; y<datos.size();y++) {
+			if (y % 2 != 0) {
 				try {
-					datos.set(i, formato.format(Float.parseFloat(datos.get(i))));
+					guardardatosbien.add(formato.format(Float.parseFloat(datos.get(y))));
 				} catch(Exception e){
-					datos.set(i,ponerPrecioBien(datos, i));
+					String[] parts = (datos.get(y).split(","));
+					guardardatosbien.add(formato.format(Float.parseFloat(parts[0] + "." + parts[1])));
+				
 				}
 			}else {
 				
-				datos.set(i, ponerEnMayuscula(datos.get(i)));
+				guardardatosbien.add(ponerEnMayuscula(datos.get(y)));
 			}
-				
 		}	
-		return datos;
+		}
+	
 	}
 	
 	public String ponerEnMayuscula (String titulo) {
@@ -64,31 +69,42 @@ public class FormatearDatos {
 		
 	}
 	
-	public void verFormatoBien (String tabla) {
+	public void verFormatoBien (ArrayList<String> tabla) {
 		
+		int fila = tabla.size() / 2;
+		int fila2 = 1;
+		int fila3 = 1;
 		
-		String acumular = "";
-		ArrayList<String> datos = new ArrayList<String>();
+		String arraybidimensional[][]=new String [fila+1][2];
+
+		arraybidimensional[0][0]= "TITULO";
+		arraybidimensional[0][1]= "        PRECIO";
 		
-		datos = tratarArchivoConDelimitador(tabla, "-");
-		
-		for (int i = 0; i<datos.size(); i++) {
-			if (i % 2 == 0) {
-				acumular += "Titulo: " + ponerEnMayuscula(datos.get(i)) + "\n";
+		for (int i = 0; i<tabla.size(); i++) {
+			
+			if (i % 2 == 0) {				
+				arraybidimensional[fila2][0] = guardardatosbien.get(i);
+				fila2 +=1;	
 			}else {			
-				acumular += "Precio: " + ponerPrecioBien(datos, i) + "\n";
+				arraybidimensional[fila3][1] = guardardatosbien.get(i);
+				fila3 +=1;
 			}
 			
-		}		
-		System.out.println(acumular);
+		}
+		recorrerArrayBidimensinal(arraybidimensional);
 	}
 	
-	public String ponerPrecioBien (ArrayList<String> precio, int posicion) {
+	public void recorrerArrayBidimensinal(String[][] array) {
 		
-		String acumular="";
-		String[] parts = (precio.get(posicion).split(","));
-		acumular += formato.format(Float.parseFloat(parts[0] + "." + parts[1]));
-		return acumular;
-		
+		for (int x=0; x < array.length; x++) 
+		 {
+		    for (int y=0; y < array[x].length; y++) 
+		    {
+
+		     System.out.print(array[x][y] + "\t");
+		    }
+		  System.out.println();
+
+		 }
 	}
 }
