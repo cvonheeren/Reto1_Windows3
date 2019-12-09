@@ -7,7 +7,8 @@ import java.util.StringTokenizer;
 
 public class FormatearDatos {
 	
-	DecimalFormat formato = new DecimalFormat("#,###.## ¤");
+	DecimalFormat formato = new DecimalFormat("#,###.## euros");
+	
 	ArrayList<String> guardardatosbien = new ArrayList<String>();
 	
 	

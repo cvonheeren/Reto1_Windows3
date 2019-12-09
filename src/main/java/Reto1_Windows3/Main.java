@@ -98,6 +98,7 @@ public class Main {
 				TratarCsv csv = new TratarCsv();
 				format.formatoANumeros(csv.leerCsv(archivoEntraStrg));
 				format.verFormatoBien(format.guardardatosbien);
+				tipo = reader.nextInt();
 
 			}
 				
